@@ -13,7 +13,7 @@ exports.protect = async (req, res, next) => {
   }
 
   if (!token) {
-    return next(new ErrorResponse("Not authorized to access this route", 401));
+return next(new ErrorResponse(`Not authorized to access this route: ${err.message}`, 401));
   }
 
   try {
@@ -22,13 +22,13 @@ exports.protect = async (req, res, next) => {
     const user = await User.findById(decoded.id);
 
     if (!user) {
-      return next(new ErrorResponse("No user found with this id", 404));
+      return next(new ErrorResponse(`Not authorized to access this route: ${err.message}`, 401));
     }
 
     req.user = user;
 
     next();
   } catch (err) {
-    return next(new ErrorResponse("Not authorized to access this router", 401));
+        return next(new ErrorResponse(`Not authorized to access this route: ${err.message}`, 401));
   }
 };
