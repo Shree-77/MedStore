@@ -52,8 +52,8 @@ export default function Topbar() {
     return (
         <div className="topbar">
             <div className="topbarWrapper">
-                <NavLink exact className="nav-link" to="/"><span className="homeLogo1">MedStore</span></NavLink>
-                <span className="homeLogo" onClick={handleDrawer}>MedStore</span>
+                <NavLink exact className="nav-link" to="/"><span className="homeLogo1">Saraswathi Medicals</span></NavLink>
+                <span className="homeLogo" onClick={handleDrawer}>Saraswathi Medicals</span>
 
                 <ul className="topbarList">
                     {
